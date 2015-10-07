@@ -238,7 +238,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print(" Security patch   : %s"%(securep));
   script.Print(" Build date       : %s"%(buildday));
   script.Print("**********************************************");
-  script.Print(" Device           : %s"%(CATALYSTdevice));
+  script.Print(" Device           : %s"%(device));
   script.Print(" Manufacturer     : %s"%(manufacturer));
   script.Print("**********************************************");
   script.Print("                                         ");
