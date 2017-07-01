@@ -221,6 +221,28 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   # Dump fingerprints
   script.Print("Target: {}".format(target_info.fingerprint))
 
+  # Build info
+  script.Print("**********************************************");
+  script.Print("              CATALYST ANDROID                ");
+  script.Print("                 VERSION 0.1                  ");
+  script.Print("           Based on LineageOS 19.1           ");
+  script.Print("**********************************************");
+  androidver = target_info.GetBuildProp("ro.build.version.release")
+  buildidn = target_info.GetBuildProp("ro.build.id")
+  buildday = target_info.GetBuildProp("ro.build.date")
+  securep = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("ro.product.name")
+  manufacturer = target_info.GetBuildProp("ro.product.manufacturer")
+  script.Print("**********************************************");
+  script.Print(" Android version  : %s"%(androidver));
+  script.Print(" Security patch   : %s"%(securep));
+  script.Print(" Build date       : %s"%(buildday));
+  script.Print("**********************************************");
+  script.Print(" Device           : %s"%(CATALYSTdevice));
+  script.Print(" Manufacturer     : %s"%(manufacturer));
+  script.Print("**********************************************");
+  script.Print("                                         ");
+
   device_specific.FullOTA_InstallBegin()
 
   CopyInstallTools(output_zip)
